@@ -70,7 +70,7 @@
 
         <div class="navbar_links" :class="{ 'open': isMenuOpen }">
             <RouterLink to="/about" @click="closeMenu">About Us</RouterLink>
-            <RouterLink to="/policy" @click="closeMenu">Privacy Policy</RouterLink>
+            <RouterLink to="/privacy" @click="closeMenu">Privacy Policy</RouterLink>
 
             <div class="button">
                 <a 

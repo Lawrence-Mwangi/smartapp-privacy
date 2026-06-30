@@ -31,7 +31,7 @@
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
-          <li><RouterLink to="/policy"> Privacy Policy</RouterLink></li>
+          <li><RouterLink to="/privacy"> Privacy Policy</RouterLink></li>
         </ul>
       </div>
 
