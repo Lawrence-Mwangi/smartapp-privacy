@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import Navbar from '@/components/Navbar.vue';
     import App_config from '@/constants/appConstants';
-    import Footer from '@/components/footer.vue';
+    import Footer from '@/components/Footer.vue';
 </script>
 
 

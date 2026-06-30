@@ -2,7 +2,7 @@
     import Navbar from '@/components/Navbar.vue';
     import HeroView from './heroView.vue';
     import ContentView from './contentView.vue';
-    import Footer from '@/components/footer.vue';
+    import Footer from '@/components/Footer.vue';
 </script>
 
 <template>

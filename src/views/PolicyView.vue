@@ -2,7 +2,7 @@
     import Navbar from '@/components/Navbar.vue';
     import App_config from '@/constants/appConstants';
     import { Icon } from '@iconify/vue';
-    import Footer from '@/components/footer.vue';
+    import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
