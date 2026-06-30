@@ -1,0 +1,235 @@
+@use 'mixin' as *;
+@use 'base' as *;
+
+.app-footer {
+  background: var(--background-color);
+  color: var(--primary-color);
+  margin-top: 4em;
+  padding-top: 3em;
+  border-top: 1px solid var(--grey-color);
+
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2em 2em;
+    @include grid(4);
+
+    // Brand Section
+    .footer-brand {
+      .brand-logo {
+       @include flex_center;
+        margin-bottom: 1em;
+        img {
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+        }
+
+        span {
+          font-size: var(--medium-font);
+          font-weight: var(--font-bold);
+          color: var(--primary-color);
+        }
+
+        .offline-badge {
+          font-size: var(--tiny-text);
+          background: var(--primary-color);
+          color: var(--success-color);
+          padding: 0.2em 0.8em;
+          border-radius: 40px;
+          font-weight: var(--font-medium);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.3em;
+          border: 1px solid var(--mute-color);
+        }
+      }
+
+      .brand-description {
+        color: var(--mute-color);
+        font-size: var(--small-text);
+        line-height: var(--line-height-loose);
+        margin-bottom: 1.2em;
+        max-width: 320px;
+      }
+    }
+
+    // Footer Links
+    .footer-links {
+      h4 {
+        font-size: var(--normal-font);
+        font-weight: var(--font-semibold);
+        margin-bottom: 1.2em;
+        color: var(--primary-color);
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: var(--accent-color);
+          border-radius: 2px;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.7em;
+
+          a {
+            color: var(--mute-color);
+            text-decoration: none;
+            font-size: var(--small-text);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+
+            i {
+              font-size: 0.8em;
+              width: 1.2em;
+              color: var(--primary-color);
+            }
+
+            &:hover {
+              color: var(--accent-color);
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+
+    // Offline Resources Section
+    .footer-offline-resources {
+      h4 {
+        font-size: var(--normal-font);
+        font-weight: var(--font-semibold);
+        margin-bottom: 0.5em;
+        color: var(--primary-color);
+      }
+
+      p {
+        color: var(--mute-color);
+        font-size: var(--small-text);
+        margin-bottom: 1.2em;
+        line-height: var(--line-height-normal);
+      }
+
+      // App Store Badges
+      .app-store-badges {
+        @include flex_center;
+
+        .badge-link {
+          @include flex_center;
+          gap: 0.6em;
+          padding: 0.4em 1.2em 0.4em 0.8em;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border: 1px solid var(--grey-color);
+          min-width: 140px;
+
+          i {
+            font-size: 2em;
+          }
+
+          .badge-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+
+            .badge-sub {
+              font-size: 0.6em;
+              font-weight: var(--font-regular);
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+
+            .badge-main {
+              font-size: 0.9em;
+              font-weight: var(--font-bold);
+            }
+          }
+
+          // Apple App Store Badge
+          &.apple {
+            background: var(--background-color);
+            border-color: var(--mute-color);
+
+            .badge-text {
+              .badge-sub {
+                color: var(--mute-color);
+              }
+
+              .badge-main {
+                color: var(--primary-color);
+              }
+            }
+
+            &:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+              background: #1a1a1a;
+            }
+          }
+
+          // Google Play Badge
+          &.google {
+            background: var(--primary-color);
+            border-color: var(--mute-color);
+
+            .badge-text {
+              .badge-sub {
+                color: var(--mute-color);
+              }
+
+              .badge-main {
+                color: var(--background-color);
+              }
+            }
+
+            &:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+              background: var(--mute-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid var(--mute-color);
+  }
+
+  // Footer Bottom Bar
+  .footer_bottom {
+    @include flex_center;
+    padding: 0.8em 0;
+  } 
+}
+
+// Responsive Design
+@media screen and (width <=720px) {
+  .app-footer {
+    .footer-offline-resources{
+        .app-store-badges{
+            gap:2em;
+            a{
+                width: 90%;
+            }
+
+        }
+    }
+  }
+}
